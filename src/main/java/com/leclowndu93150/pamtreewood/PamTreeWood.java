@@ -58,9 +58,6 @@ public class PamTreeWood {
         modEventBus.addListener(this::commonSetup);
     }
 
-    //TODO: Fences not having an item model (doesn't work)
-    //TODO: Buttons having wrong perspective model, i only see the direct face
-    //TODO: Can't strip the woods
     //TODO: Neither the signs not the models render (don't fix)
 
 
