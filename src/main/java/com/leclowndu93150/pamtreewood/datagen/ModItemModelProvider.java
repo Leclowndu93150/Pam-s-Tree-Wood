@@ -35,10 +35,12 @@ public class ModItemModelProvider extends ItemModelProvider {
         blockBasedItem(ModBlocks.PLANKS.get(woodType));
         blockBasedItem(ModBlocks.SLABS.get(woodType));
         blockBasedItem(ModBlocks.STAIRS.get(woodType));
-        blockBasedItem(ModBlocks.FENCES.get(woodType));
-        blockBasedItem(ModBlocks.FENCE_GATES.get(woodType));
         blockBasedItem(ModBlocks.PRESSURE_PLATES.get(woodType));
         blockBasedItem(ModBlocks.BUTTONS.get(woodType));
+
+        // Fences need special inventory models
+        fenceItem(ModBlocks.FENCES.get(woodType), name);
+        fenceGateItem(ModBlocks.FENCE_GATES.get(woodType), name);
 
         // Special items that need custom models
         simpleItem(ModItems.DOOR_ITEMS.get(woodType));
@@ -67,5 +69,15 @@ public class ModItemModelProvider extends ItemModelProvider {
     private ItemModelBuilder trapdoorItem(RegistryObject<? extends Block> item) {
         return withExistingParent(item.getId().getPath(),
                 new ResourceLocation(PamTreeWood.MODID, "block/" + item.getId().getPath() + "_bottom"));
+    }
+
+    private ItemModelBuilder fenceItem(RegistryObject<? extends Block> fence, String textureName) {
+        return withExistingParent(fence.getId().getPath(),
+                new ResourceLocation(PamTreeWood.MODID, "block/" + textureName + "_fence_inventory"));
+    }
+
+    private ItemModelBuilder fenceGateItem(RegistryObject<? extends Block> fenceGate, String textureName) {
+        return withExistingParent(fenceGate.getId().getPath(),
+                new ResourceLocation(PamTreeWood.MODID, "block/" + textureName + "_fence_gate"));
     }
 }
