@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "pamtreewood:block/tamarind_planks",
+    "side": "pamtreewood:block/tamarind_planks",
+    "top": "pamtreewood:block/tamarind_planks"
+  }
+}

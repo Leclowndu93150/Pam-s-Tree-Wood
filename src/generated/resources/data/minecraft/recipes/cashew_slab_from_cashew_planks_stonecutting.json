@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "item": "pamtreewood:cashew_planks"
+  },
+  "result": "pamtreewood:cashew_slab"
+}

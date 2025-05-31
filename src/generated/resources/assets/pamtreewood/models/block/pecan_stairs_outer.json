@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "pamtreewood:block/pecan_planks",
+    "side": "pamtreewood:block/pecan_planks",
+    "top": "pamtreewood:block/pecan_planks"
+  }
+}

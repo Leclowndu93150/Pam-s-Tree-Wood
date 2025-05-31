@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "pamtreewood:block/passionfruit_slab"
+    },
+    "type=double": {
+      "model": "pamtreewood:block/passionfruit_planks"
+    },
+    "type=top": {
+      "model": "pamtreewood:block/passionfruit_slab_top"
+    }
+  }
+}

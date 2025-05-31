@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "pamtreewood:block/tamarind_slab"
+    },
+    "type=double": {
+      "model": "pamtreewood:block/tamarind_planks"
+    },
+    "type=top": {
+      "model": "pamtreewood:block/tamarind_slab_top"
+    }
+  }
+}

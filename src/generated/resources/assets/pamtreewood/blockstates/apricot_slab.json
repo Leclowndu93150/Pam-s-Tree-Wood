@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "pamtreewood:block/apricot_slab"
+    },
+    "type=double": {
+      "model": "pamtreewood:block/apricot_planks"
+    },
+    "type=top": {
+      "model": "pamtreewood:block/apricot_slab_top"
+    }
+  }
+}

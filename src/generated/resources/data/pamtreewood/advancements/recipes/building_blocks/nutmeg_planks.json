@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_nutmeg_log": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "pamtreewood:nutmeg_log"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "pamtreewood:nutmeg_planks"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_nutmeg_log",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "pamtreewood:nutmeg_planks"
+    ]
+  },
+  "sends_telemetry_event": false
+}

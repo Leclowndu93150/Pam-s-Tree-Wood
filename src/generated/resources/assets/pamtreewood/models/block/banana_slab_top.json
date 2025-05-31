@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "pamtreewood:block/banana_planks",
+    "side": "pamtreewood:block/banana_planks",
+    "top": "pamtreewood:block/banana_planks"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_dragonfruit_planks": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "pamtreewood:dragonfruit_planks"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "pamtreewood:dragonfruit_slab"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_dragonfruit_planks",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "pamtreewood:dragonfruit_slab"
+    ]
+  },
+  "sends_telemetry_event": false
+}

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "pamtreewood:block/cashew_slab"
+    },
+    "type=double": {
+      "model": "pamtreewood:block/cashew_planks"
+    },
+    "type=top": {
+      "model": "pamtreewood:block/cashew_slab_top"
+    }
+  }
+}

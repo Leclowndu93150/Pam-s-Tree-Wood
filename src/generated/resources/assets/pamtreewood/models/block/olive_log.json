@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "pamtreewood:block/olive_log_top",
+    "side": "pamtreewood:block/olive_log"
+  }
+}

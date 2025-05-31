@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "pamtreewood:block/jackfruit_slab"
+    },
+    "type=double": {
+      "model": "pamtreewood:block/jackfruit_planks"
+    },
+    "type=top": {
+      "model": "pamtreewood:block/jackfruit_slab_top"
+    }
+  }
+}

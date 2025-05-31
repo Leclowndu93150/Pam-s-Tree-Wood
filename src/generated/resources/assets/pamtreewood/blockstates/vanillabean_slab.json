@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "pamtreewood:block/vanillabean_slab"
+    },
+    "type=double": {
+      "model": "pamtreewood:block/vanillabean_planks"
+    },
+    "type=top": {
+      "model": "pamtreewood:block/vanillabean_slab_top"
+    }
+  }
+}

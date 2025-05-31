@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "pamtreewood:block/cashew_pressure_plate"
+    },
+    "powered=true": {
+      "model": "pamtreewood:block/cashew_pressure_plate_down"
+    }
+  }
+}

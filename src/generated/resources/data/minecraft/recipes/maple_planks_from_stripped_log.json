@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "pamtreewood:stripped_maple_log"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "item": "pamtreewood:maple_planks"
+  }
+}

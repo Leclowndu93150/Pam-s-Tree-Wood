@@ -1,0 +1,22 @@
+// 1.20.1	2025-05-31T17:13:54.8995207	Tags for minecraft:item mod id pamtreewood
+c61ea9bff960c22b1bed34f54bcc7a80baa92a1a data/minecraft/tags/items/boats.json
+a3d25d92d4e9a479ba67b5e05de4c1e1273fbf92 data/minecraft/tags/items/chest_boats.json
+01a33fe84591cb76d74d41103660785148fc7a5d data/minecraft/tags/items/doors.json
+2cee98aabeabd7fa5cb7938a35f315af75507412 data/minecraft/tags/items/fences.json
+021d3f9e110f8a2a9951d38be893111a05dedeb5 data/minecraft/tags/items/fence_gates.json
+09ea5795061de831059caa9af4d89055ea6467c4 data/minecraft/tags/items/hanging_signs.json
+de606547b97f54a86774d6189384a756ecac9739 data/minecraft/tags/items/leaves.json
+b36cc011e077320d28a00677f530b6f256dbd428 data/minecraft/tags/items/logs.json
+b36cc011e077320d28a00677f530b6f256dbd428 data/minecraft/tags/items/logs_that_burn.json
+56c5fc53efaaa7ce5207bb778cec918726ae618a data/minecraft/tags/items/planks.json
+2accb433f6a4b1e1ca76a41b2bbc6e9bb7b002eb data/minecraft/tags/items/signs.json
+df1aac9b353afb5ce1f969b79bfdf42373440e86 data/minecraft/tags/items/slabs.json
+a25a7649cc371ccbbf9a48422d92cdbbd6c716d4 data/minecraft/tags/items/stairs.json
+c2ce1867328d4e209f48291ac6de3d4dee8165bf data/minecraft/tags/items/trapdoors.json
+5a1dbc5bdc63eda0d27799c82214e0c162748f8c data/minecraft/tags/items/wooden_buttons.json
+01a33fe84591cb76d74d41103660785148fc7a5d data/minecraft/tags/items/wooden_doors.json
+2cee98aabeabd7fa5cb7938a35f315af75507412 data/minecraft/tags/items/wooden_fences.json
+79be5f2d6b75a9926191c54c8397be6a6e9207ab data/minecraft/tags/items/wooden_pressure_plates.json
+df1aac9b353afb5ce1f969b79bfdf42373440e86 data/minecraft/tags/items/wooden_slabs.json
+a25a7649cc371ccbbf9a48422d92cdbbd6c716d4 data/minecraft/tags/items/wooden_stairs.json
+c2ce1867328d4e209f48291ac6de3d4dee8165bf data/minecraft/tags/items/wooden_trapdoors.json

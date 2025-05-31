@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_hazelnut_planks": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "pamtreewood:hazelnut_planks"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "pamtreewood:hazelnut_boat"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_hazelnut_planks",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "pamtreewood:hazelnut_boat"
+    ]
+  },
+  "sends_telemetry_event": false
+}

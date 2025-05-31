@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "pamtreewood:block/hazelnut_slab"
+    },
+    "type=double": {
+      "model": "pamtreewood:block/hazelnut_planks"
+    },
+    "type=top": {
+      "model": "pamtreewood:block/hazelnut_slab_top"
+    }
+  }
+}

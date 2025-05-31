@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_jackfruit_planks": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "pamtreewood:jackfruit_planks"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "pamtreewood:jackfruit_button"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_jackfruit_planks",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "pamtreewood:jackfruit_button"
+    ]
+  },
+  "sends_telemetry_event": false
+}

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "pamtreewood:block/date_slab"
+    },
+    "type=double": {
+      "model": "pamtreewood:block/date_planks"
+    },
+    "type=top": {
+      "model": "pamtreewood:block/date_slab_top"
+    }
+  }
+}

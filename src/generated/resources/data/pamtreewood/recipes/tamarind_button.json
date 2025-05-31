@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "ingredients": [
+    {
+      "item": "pamtreewood:tamarind_planks"
+    }
+  ],
+  "result": {
+    "item": "pamtreewood:tamarind_button"
+  }
+}

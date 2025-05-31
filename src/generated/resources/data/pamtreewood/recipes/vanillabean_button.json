@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "ingredients": [
+    {
+      "item": "pamtreewood:vanillabean_planks"
+    }
+  ],
+  "result": {
+    "item": "pamtreewood:vanillabean_button"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "pamtreewood:block/cashew_planks",
+    "side": "pamtreewood:block/cashew_planks",
+    "top": "pamtreewood:block/cashew_planks"
+  }
+}

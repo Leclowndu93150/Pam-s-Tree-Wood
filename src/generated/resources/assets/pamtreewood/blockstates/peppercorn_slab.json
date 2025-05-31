@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "pamtreewood:block/peppercorn_slab"
+    },
+    "type=double": {
+      "model": "pamtreewood:block/peppercorn_planks"
+    },
+    "type=top": {
+      "model": "pamtreewood:block/peppercorn_slab_top"
+    }
+  }
+}

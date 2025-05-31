@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "pamtreewood:hazelnut_planks"
+  },
+  "result": "pamtreewood:hazelnut_stairs"
+}

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "pamtreewood:block/dragonfruit_slab"
+    },
+    "type=double": {
+      "model": "pamtreewood:block/dragonfruit_planks"
+    },
+    "type=top": {
+      "model": "pamtreewood:block/dragonfruit_slab_top"
+    }
+  }
+}

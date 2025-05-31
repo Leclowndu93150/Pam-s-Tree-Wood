@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "pamtreewood:block/peppercorn_planks",
+    "side": "pamtreewood:block/peppercorn_planks",
+    "top": "pamtreewood:block/peppercorn_planks"
+  }
+}

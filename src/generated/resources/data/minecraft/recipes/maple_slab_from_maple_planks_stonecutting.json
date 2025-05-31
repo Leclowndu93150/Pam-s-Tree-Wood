@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "item": "pamtreewood:maple_planks"
+  },
+  "result": "pamtreewood:maple_slab"
+}

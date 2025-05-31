@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "pamtreewood:vanillabean_planks"
+  },
+  "result": "pamtreewood:vanillabean_stairs"
+}

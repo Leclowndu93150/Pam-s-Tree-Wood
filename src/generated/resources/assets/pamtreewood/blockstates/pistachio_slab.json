@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "pamtreewood:block/pistachio_slab"
+    },
+    "type=double": {
+      "model": "pamtreewood:block/pistachio_planks"
+    },
+    "type=top": {
+      "model": "pamtreewood:block/pistachio_slab_top"
+    }
+  }
+}

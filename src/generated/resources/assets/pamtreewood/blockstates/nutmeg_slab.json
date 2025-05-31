@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "pamtreewood:block/nutmeg_slab"
+    },
+    "type=double": {
+      "model": "pamtreewood:block/nutmeg_planks"
+    },
+    "type=top": {
+      "model": "pamtreewood:block/nutmeg_slab_top"
+    }
+  }
+}
