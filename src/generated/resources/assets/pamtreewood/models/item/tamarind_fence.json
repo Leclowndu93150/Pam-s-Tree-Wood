@@ -1,3 +1,6 @@
 {
-  "parent": "pamtreewood:block/tamarind_fence_inventory"
+  "parent": "minecraft:block/fence_inventory",
+  "textures": {
+    "texture": "pamtreewood:block/tamarind_planks"
+  }
 }

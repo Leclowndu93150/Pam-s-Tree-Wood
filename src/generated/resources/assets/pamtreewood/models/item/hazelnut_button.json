@@ -1,3 +1,6 @@
 {
-  "parent": "pamtreewood:block/hazelnut_button"
+  "parent": "minecraft:block/button_inventory",
+  "textures": {
+    "texture": "pamtreewood:block/hazelnut_planks"
+  }
 }

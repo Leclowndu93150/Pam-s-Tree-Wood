@@ -94,19 +94,19 @@ public class ModBlocks {
         BUTTONS.put(woodType, BLOCKS.register(name + "_button",
                 () -> new ButtonBlock(BlockBehaviour.Properties.copy(Blocks.OAK_BUTTON), blockSetType, 30, true)));
 
-//        // Custom Signs
-//        SIGNS.put(woodType, BLOCKS.register(name + "_sign",
-//                () -> new ModStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), mcWoodType)));
-//
-//        WALL_SIGNS.put(woodType, BLOCKS.register(name + "_wall_sign",
-//                () -> new ModWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), mcWoodType)));
-//
-//        // Custom Hanging Signs
-//        HANGING_SIGNS.put(woodType, BLOCKS.register(name + "_hanging_sign",
-//                () -> new ModCeilingHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_HANGING_SIGN), mcWoodType)));
-//
-//        WALL_HANGING_SIGNS.put(woodType, BLOCKS.register(name + "_wall_hanging_sign",
-//                () -> new ModWallHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_HANGING_SIGN), mcWoodType)));
+        // Custom Signs
+        SIGNS.put(woodType, BLOCKS.register(name + "_sign",
+                () -> new ModStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), mcWoodType)));
+
+        WALL_SIGNS.put(woodType, BLOCKS.register(name + "_wall_sign",
+                () -> new ModWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), mcWoodType)));
+
+        // Custom Hanging Signs
+        HANGING_SIGNS.put(woodType, BLOCKS.register(name + "_hanging_sign",
+                () -> new ModCeilingHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_HANGING_SIGN), mcWoodType)));
+
+        WALL_HANGING_SIGNS.put(woodType, BLOCKS.register(name + "_wall_hanging_sign",
+                () -> new ModWallHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_HANGING_SIGN), mcWoodType)));
     }
 
     public static RegistryObject<Block> getLeaves(WoodTypeVariant woodType) {

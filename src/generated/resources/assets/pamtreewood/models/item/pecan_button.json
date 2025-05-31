@@ -1,3 +1,6 @@
 {
-  "parent": "pamtreewood:block/pecan_button"
+  "parent": "minecraft:block/button_inventory",
+  "textures": {
+    "texture": "pamtreewood:block/pecan_planks"
+  }
 }

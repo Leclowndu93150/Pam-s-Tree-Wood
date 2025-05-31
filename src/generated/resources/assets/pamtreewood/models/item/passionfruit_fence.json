@@ -1,3 +1,6 @@
 {
-  "parent": "pamtreewood:block/passionfruit_fence_inventory"
+  "parent": "minecraft:block/fence_inventory",
+  "textures": {
+    "texture": "pamtreewood:block/passionfruit_planks"
+  }
 }

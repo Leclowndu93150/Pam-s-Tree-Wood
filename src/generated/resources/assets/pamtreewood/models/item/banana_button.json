@@ -1,3 +1,6 @@
 {
-  "parent": "pamtreewood:block/banana_button"
+  "parent": "minecraft:block/button_inventory",
+  "textures": {
+    "texture": "pamtreewood:block/banana_planks"
+  }
 }

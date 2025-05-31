@@ -1,3 +1,6 @@
 {
-  "parent": "pamtreewood:block/red_cherry_fence_inventory"
+  "parent": "minecraft:block/fence_inventory",
+  "textures": {
+    "texture": "pamtreewood:block/red_cherry_planks"
+  }
 }

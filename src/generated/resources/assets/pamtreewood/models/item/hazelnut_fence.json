@@ -1,3 +1,6 @@
 {
-  "parent": "pamtreewood:block/hazelnut_fence_inventory"
+  "parent": "minecraft:block/fence_inventory",
+  "textures": {
+    "texture": "pamtreewood:block/hazelnut_planks"
+  }
 }

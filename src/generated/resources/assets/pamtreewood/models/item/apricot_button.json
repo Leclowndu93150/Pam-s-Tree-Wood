@@ -1,3 +1,6 @@
 {
-  "parent": "pamtreewood:block/apricot_button"
+  "parent": "minecraft:block/button_inventory",
+  "textures": {
+    "texture": "pamtreewood:block/apricot_planks"
+  }
 }

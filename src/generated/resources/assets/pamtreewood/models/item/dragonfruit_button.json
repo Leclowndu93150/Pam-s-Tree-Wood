@@ -1,3 +1,6 @@
 {
-  "parent": "pamtreewood:block/dragonfruit_button"
+  "parent": "minecraft:block/button_inventory",
+  "textures": {
+    "texture": "pamtreewood:block/dragonfruit_planks"
+  }
 }
