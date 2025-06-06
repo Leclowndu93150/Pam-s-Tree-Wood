@@ -31,7 +31,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         // Block items that should use block models
         blockBasedItem(ModBlocks.LEAVES.get(woodType));
         blockBasedItem(ModBlocks.LOGS.get(woodType));
+        blockBasedItem(ModBlocks.WOOD.get(woodType));
         blockBasedItem(ModBlocks.STRIPPED_LOGS.get(woodType));
+        blockBasedItem(ModBlocks.STRIPPED_WOOD.get(woodType));
         blockBasedItem(ModBlocks.PLANKS.get(woodType));
         blockBasedItem(ModBlocks.SLABS.get(woodType));
         blockBasedItem(ModBlocks.STAIRS.get(woodType));

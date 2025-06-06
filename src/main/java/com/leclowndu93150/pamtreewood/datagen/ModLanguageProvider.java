@@ -2,6 +2,7 @@ package com.leclowndu93150.pamtreewood.datagen;
 
 import com.leclowndu93150.pamtreewood.PamTreeWood;
 import com.leclowndu93150.pamtreewood.init.ModBlocks;
+import com.leclowndu93150.pamtreewood.init.ModBoats;
 import com.leclowndu93150.pamtreewood.init.ModItems;
 import com.leclowndu93150.pamtreewood.util.WoodTypeVariant;
 import net.minecraft.data.PackOutput;
@@ -29,7 +30,9 @@ public class ModLanguageProvider extends LanguageProvider {
         // Blocks
         add(ModBlocks.LEAVES.get(woodType).get(), displayName + " Leaves");
         add(ModBlocks.LOGS.get(woodType).get(), displayName + " Log");
+        add(ModBlocks.WOOD.get(woodType).get(), displayName + " Wood");
         add(ModBlocks.STRIPPED_LOGS.get(woodType).get(), "Stripped " + displayName + " Log");
+        add(ModBlocks.STRIPPED_WOOD.get(woodType).get(), "Stripped " + displayName + " Wood");
         add(ModBlocks.PLANKS.get(woodType).get(), displayName + " Planks");
         add(ModBlocks.SLABS.get(woodType).get(), displayName + " Slab");
         add(ModBlocks.STAIRS.get(woodType).get(), displayName + " Stairs");
@@ -45,6 +48,10 @@ public class ModLanguageProvider extends LanguageProvider {
         // Items (boats and special items)
         add(ModItems.BOAT_ITEMS.get(woodType).get(), displayName + " Boat");
         add(ModItems.CHEST_BOAT_ITEMS.get(woodType).get(), displayName + " Boat with Chest");
+        
+        // Entities
+        add(ModBoats.BOAT_ENTITIES.get(woodType).get(), displayName + " Boat");
+        add(ModBoats.CHEST_BOAT_ENTITIES.get(woodType).get(), displayName + " Boat with Chest");
     }
 
     private String formatDisplayName(String name) {

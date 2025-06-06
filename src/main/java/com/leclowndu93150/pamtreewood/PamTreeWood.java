@@ -8,6 +8,7 @@ import com.leclowndu93150.pamtreewood.init.ModCreativeTabs;
 import com.leclowndu93150.pamtreewood.init.ModItems;
 import com.leclowndu93150.pamtreewood.util.WoodTypeVariant;
 import com.mojang.logging.LogUtils;
+import com.pam.pamhc2trees.worldgen.growers.PamSoursopTreeGrower;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
@@ -66,6 +67,7 @@ public class PamTreeWood {
         event.enqueueWork(() -> {
             for (WoodTypeVariant woodType : WoodTypeVariant.values()) {
                 MOD_STRIPPABLES.put(ModBlocks.LOGS.get(woodType).get(), ModBlocks.STRIPPED_LOGS.get(woodType).get());
+                MOD_STRIPPABLES.put(ModBlocks.WOOD.get(woodType).get(), ModBlocks.STRIPPED_WOOD.get(woodType).get());
             }
         });
     }
@@ -106,4 +108,7 @@ public class PamTreeWood {
     public static ResourceLocation id(String path) {
         return new ResourceLocation(MODID, path);
     }
+
+
+
 }

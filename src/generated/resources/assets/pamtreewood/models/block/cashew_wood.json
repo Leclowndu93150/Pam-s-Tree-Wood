@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "pamtreewood:block/cashew_log",
+    "side": "pamtreewood:block/cashew_log"
+  }
+}

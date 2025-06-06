@@ -30,7 +30,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         // Logs - proper axis handling
         logBlock(ModBlocks.LOGS.get(woodType).get());
+        woodBlock(ModBlocks.WOOD.get(woodType).get());
         logBlock(ModBlocks.STRIPPED_LOGS.get(woodType).get());
+        woodBlock(ModBlocks.STRIPPED_WOOD.get(woodType).get());
 
         // Planks
         simpleBlockWithItem(ModBlocks.PLANKS.get(woodType).get(), cubeAll(ModBlocks.PLANKS.get(woodType).get()));
@@ -77,6 +79,23 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     public void logBlock(RotatedPillarBlock block) {
         axisBlock(block, blockTexture(block), extend(blockTexture(block), "_top"));
+    }
+
+    public void woodBlock(RotatedPillarBlock block) {
+        String blockName = block.getDescriptionId().replace("block.pamtreewood.", "");
+        ResourceLocation barkTexture;
+        
+        if (blockName.startsWith("stripped_")) {
+            // For stripped wood, use the stripped log texture on all sides
+            String logName = blockName.replace("_wood", "_log");
+            barkTexture = modLoc("block/" + logName);
+        } else {
+            // For regular wood, use the regular log texture on all sides
+            String logName = blockName.replace("_wood", "_log");
+            barkTexture = modLoc("block/" + logName);
+        }
+        
+        axisBlock(block, barkTexture, barkTexture);
     }
 
     private ResourceLocation extend(ResourceLocation rl, String suffix) {

@@ -17,7 +17,9 @@ public class ModItems {
     // Maps to store all wood items by type
     public static final Map<WoodTypeVariant, RegistryObject<BlockItem>> LEAVES_ITEMS = new HashMap<>();
     public static final Map<WoodTypeVariant, RegistryObject<BlockItem>> LOG_ITEMS = new HashMap<>();
+    public static final Map<WoodTypeVariant, RegistryObject<BlockItem>> WOOD_ITEMS = new HashMap<>();
     public static final Map<WoodTypeVariant, RegistryObject<BlockItem>> STRIPPED_LOG_ITEMS = new HashMap<>();
+    public static final Map<WoodTypeVariant, RegistryObject<BlockItem>> STRIPPED_WOOD_ITEMS = new HashMap<>();
     public static final Map<WoodTypeVariant, RegistryObject<BlockItem>> PLANK_ITEMS = new HashMap<>();
     public static final Map<WoodTypeVariant, RegistryObject<BlockItem>> SLAB_ITEMS = new HashMap<>();
     public static final Map<WoodTypeVariant, RegistryObject<BlockItem>> STAIR_ITEMS = new HashMap<>();
@@ -48,8 +50,14 @@ public class ModItems {
         LOG_ITEMS.put(woodType, ITEMS.register(name + "_log",
                 () -> new BlockItem(ModBlocks.LOGS.get(woodType).get(), new Item.Properties())));
 
+        WOOD_ITEMS.put(woodType, ITEMS.register(name + "_wood",
+                () -> new BlockItem(ModBlocks.WOOD.get(woodType).get(), new Item.Properties())));
+
         STRIPPED_LOG_ITEMS.put(woodType, ITEMS.register("stripped_" + name + "_log",
                 () -> new BlockItem(ModBlocks.STRIPPED_LOGS.get(woodType).get(), new Item.Properties())));
+
+        STRIPPED_WOOD_ITEMS.put(woodType, ITEMS.register("stripped_" + name + "_wood",
+                () -> new BlockItem(ModBlocks.STRIPPED_WOOD.get(woodType).get(), new Item.Properties())));
 
         PLANK_ITEMS.put(woodType, ITEMS.register(name + "_planks",
                 () -> new BlockItem(ModBlocks.PLANKS.get(woodType).get(), new Item.Properties())));
@@ -103,8 +111,16 @@ public class ModItems {
         return LOG_ITEMS.get(woodType);
     }
 
+    public static RegistryObject<BlockItem> getWoodItem(WoodTypeVariant woodType) {
+        return WOOD_ITEMS.get(woodType);
+    }
+
     public static RegistryObject<BlockItem> getStrippedLogItem(WoodTypeVariant woodType) {
         return STRIPPED_LOG_ITEMS.get(woodType);
+    }
+
+    public static RegistryObject<BlockItem> getStrippedWoodItem(WoodTypeVariant woodType) {
+        return STRIPPED_WOOD_ITEMS.get(woodType);
     }
 
     public static RegistryObject<BlockItem> getPlankItem(WoodTypeVariant woodType) {

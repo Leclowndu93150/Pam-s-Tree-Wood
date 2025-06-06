@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "pamtreewood:block/red_cherry_log",
+    "side": "pamtreewood:block/red_cherry_log"
+  }
+}

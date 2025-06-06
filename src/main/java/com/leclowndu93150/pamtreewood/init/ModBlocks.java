@@ -23,7 +23,9 @@ public class ModBlocks {
     // Maps to store all wood blocks by type
     public static final Map<WoodTypeVariant, RegistryObject<Block>> LEAVES = new HashMap<>();
     public static final Map<WoodTypeVariant, RegistryObject<RotatedPillarBlock>> LOGS = new HashMap<>();
+    public static final Map<WoodTypeVariant, RegistryObject<RotatedPillarBlock>> WOOD = new HashMap<>();
     public static final Map<WoodTypeVariant, RegistryObject<RotatedPillarBlock>> STRIPPED_LOGS = new HashMap<>();
+    public static final Map<WoodTypeVariant, RegistryObject<RotatedPillarBlock>> STRIPPED_WOOD = new HashMap<>();
     public static final Map<WoodTypeVariant, RegistryObject<Block>> PLANKS = new HashMap<>();
     public static final Map<WoodTypeVariant, RegistryObject<SlabBlock>> SLABS = new HashMap<>();
     public static final Map<WoodTypeVariant, RegistryObject<StairBlock>> STAIRS = new HashMap<>();
@@ -57,8 +59,14 @@ public class ModBlocks {
         LOGS.put(woodType, BLOCKS.register(name + "_log",
                 () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG))));
 
+        WOOD.put(woodType, BLOCKS.register(name + "_wood",
+                () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD))));
+
         STRIPPED_LOGS.put(woodType, BLOCKS.register("stripped_" + name + "_log",
                 () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG))));
+
+        STRIPPED_WOOD.put(woodType, BLOCKS.register("stripped_" + name + "_wood",
+                () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_WOOD))));
 
         // Planks
         PLANKS.put(woodType, BLOCKS.register(name + "_planks",
@@ -117,8 +125,16 @@ public class ModBlocks {
         return LOGS.get(woodType);
     }
 
+    public static RegistryObject<RotatedPillarBlock> getWood(WoodTypeVariant woodType) {
+        return WOOD.get(woodType);
+    }
+
     public static RegistryObject<RotatedPillarBlock> getStrippedLog(WoodTypeVariant woodType) {
         return STRIPPED_LOGS.get(woodType);
+    }
+
+    public static RegistryObject<RotatedPillarBlock> getStrippedWood(WoodTypeVariant woodType) {
+        return STRIPPED_WOOD.get(woodType);
     }
 
     public static RegistryObject<Block> getPlanks(WoodTypeVariant woodType) {

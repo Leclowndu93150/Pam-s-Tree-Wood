@@ -35,7 +35,9 @@ public class ModLootTableProvider extends LootTableProvider {
             // Simple drops (block drops itself)
             dropSelf(ModBlocks.LEAVES.get(woodType).get());
             dropSelf(ModBlocks.LOGS.get(woodType).get());
+            dropSelf(ModBlocks.WOOD.get(woodType).get());
             dropSelf(ModBlocks.STRIPPED_LOGS.get(woodType).get());
+            dropSelf(ModBlocks.STRIPPED_WOOD.get(woodType).get());
             dropSelf(ModBlocks.PLANKS.get(woodType).get());
             dropSelf(ModBlocks.STAIRS.get(woodType).get());
             dropSelf(ModBlocks.FENCES.get(woodType).get());

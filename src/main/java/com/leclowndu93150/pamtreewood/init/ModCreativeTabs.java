@@ -25,7 +25,9 @@ public class ModCreativeTabs {
 
                             // Logs
                             output.accept(ModItems.getLogItem(woodType).get());
+                            output.accept(ModItems.getWoodItem(woodType).get());
                             output.accept(ModItems.getStrippedLogItem(woodType).get());
+                            output.accept(ModItems.getStrippedWoodItem(woodType).get());
 
                             // Planks and derivatives
                             output.accept(ModItems.getPlankItem(woodType).get());

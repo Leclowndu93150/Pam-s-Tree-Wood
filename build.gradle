@@ -144,8 +144,10 @@ dependencies {
     // then special handling is done to allow a setup of a vanilla dependency without the use of an external repository.
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
 
-    runtimeOnly fg.deobf("curse.maven:every-compat-628539:6566531")
-    runtimeOnly fg.deobf("curse.maven:selene-499980:6507197")
+    //runtimeOnly fg.deobf("curse.maven:every-compat-628539:6566531")
+    //runtimeOnly fg.deobf("curse.maven:selene-499980:6507197")
+
+    implementation fg.deobf("curse.maven:pams-harvestcraft-2-trees-365460:4625518")
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 
 }
