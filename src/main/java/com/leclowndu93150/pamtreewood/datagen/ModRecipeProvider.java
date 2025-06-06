@@ -27,20 +27,47 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
     private void generateWoodRecipes(Consumer<FinishedRecipe> consumer, WoodTypeVariant woodType) {
         ItemLike log = ModItems.getLogItem(woodType).get();
+        ItemLike wood = ModItems.getWoodItem(woodType).get();
         ItemLike strippedLog = ModItems.getStrippedLogItem(woodType).get();
+        ItemLike strippedWood = ModItems.getStrippedWoodItem(woodType).get();
         ItemLike planks = ModItems.getPlankItem(woodType).get();
         String name = woodType.getName();
 
-        // Planks from logs
+        // Wood from logs (2x2 logs -> 3 wood)
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, wood, 3)
+                .pattern("##")
+                .pattern("##")
+                .define('#', log)
+                .unlockedBy("has_" + name + "_log", has(log))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, strippedWood, 3)
+                .pattern("##")
+                .pattern("##")
+                .define('#', strippedLog)
+                .unlockedBy("has_stripped_" + name + "_log", has(strippedLog))
+                .save(consumer);
+
+        // Planks from logs and wood
         ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, planks, 4)
                 .requires(log)
                 .unlockedBy("has_" + name + "_log", has(log))
                 .save(consumer);
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, planks, 4)
+                .requires(wood)
+                .unlockedBy("has_" + name + "_wood", has(wood))
+                .save(consumer, name + "_planks_from_wood");
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, planks, 4)
                 .requires(strippedLog)
                 .unlockedBy("has_stripped_" + name + "_log", has(strippedLog))
                 .save(consumer, name + "_planks_from_stripped_log");
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, planks, 4)
+                .requires(strippedWood)
+                .unlockedBy("has_stripped_" + name + "_wood", has(strippedWood))
+                .save(consumer, name + "_planks_from_stripped_wood");
 
         // Slabs
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModItems.SLAB_ITEMS.get(woodType).get(), 6)

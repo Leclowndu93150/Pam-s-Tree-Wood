@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "pamtreewood:stripped_red_cherry_wood"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "item": "pamtreewood:red_cherry_planks"
+  }
+}
