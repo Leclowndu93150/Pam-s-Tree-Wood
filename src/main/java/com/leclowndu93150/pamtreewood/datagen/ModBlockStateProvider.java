@@ -67,14 +67,11 @@ public class ModBlockStateProvider extends BlockStateProvider {
         buttonBlock(ModBlocks.BUTTONS.get(woodType).get(),
                 modLoc("block/" + name + "_planks"));
 
-        // Signs
-        signBlock(ModBlocks.SIGNS.get(woodType).get(),
-                ModBlocks.WALL_SIGNS.get(woodType).get(),
-                modLoc("block/" + name + "_planks"));
+        // Signs - generate proper models
+        generateSignModels(woodType);
 
-        hangingSignBlock(ModBlocks.HANGING_SIGNS.get(woodType).get(),
-                ModBlocks.WALL_HANGING_SIGNS.get(woodType).get(),
-                modLoc("block/" + name + "_planks"));
+        // Hanging Signs - generate proper models  
+        generateHangingSignModels(woodType);
     }
 
     public void logBlock(RotatedPillarBlock block) {
@@ -102,14 +99,31 @@ public class ModBlockStateProvider extends BlockStateProvider {
         return new ResourceLocation(rl.getNamespace(), rl.getPath() + suffix);
     }
 
-    private void hangingSignBlock(Block hangingSign, Block wallHangingSign, ResourceLocation texture) {
-        String signName = hangingSign.getDescriptionId().replace("block." + PamTreeWood.MODID + ".", "");
-        ModelFile hangingSignModel = models().sign(signName, texture);
-        hangingSignBlock(hangingSign, wallHangingSign, hangingSignModel);
+    private void generateSignModels(WoodTypeVariant woodType) {
+        String name = woodType.getName();
+        Block standingSign = ModBlocks.SIGNS.get(woodType).get();
+        Block wallSign = ModBlocks.WALL_SIGNS.get(woodType).get();
+        
+        // Generate sign model with particle texture
+        ModelFile signModel = models().withExistingParent(name + "_sign", "block/oak_sign")
+                .texture("particle", modLoc("block/" + name + "_planks"));
+        
+        // Apply model to both standing and wall signs
+        simpleBlock(standingSign, signModel);
+        simpleBlock(wallSign, signModel);
     }
 
-    private void hangingSignBlock(Block hangingSign, Block wallHangingSign, ModelFile model) {
-        simpleBlock(hangingSign, model);
-        simpleBlock(wallHangingSign, model);
+    private void generateHangingSignModels(WoodTypeVariant woodType) {
+        String name = woodType.getName();
+        Block hangingSign = ModBlocks.HANGING_SIGNS.get(woodType).get();
+        Block wallHangingSign = ModBlocks.WALL_HANGING_SIGNS.get(woodType).get();
+        
+        // Generate hanging sign model with particle texture
+        ModelFile hangingSignModel = models().withExistingParent(name + "_hanging_sign", "block/cherry_hanging_sign")
+                .texture("particle", modLoc("block/stripped_" + name + "_log"));
+        
+        // Apply model to both hanging and wall hanging signs
+        simpleBlock(hangingSign, hangingSignModel);
+        simpleBlock(wallHangingSign, hangingSignModel);
     }
 }
