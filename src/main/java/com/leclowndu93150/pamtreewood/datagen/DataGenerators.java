@@ -18,15 +18,15 @@ public class DataGenerators {
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
 
-        // Create a lenient ExistingFileHelper that doesn't fail on missing textures
+        
         ExistingFileHelper lenientHelper = new LenientExistingFileHelper();
 
-        // Client-side data generators
+        
         generator.addProvider(event.includeClient(), new ModBlockStateProvider(packOutput, lenientHelper));
         generator.addProvider(event.includeClient(), new ModItemModelProvider(packOutput, lenientHelper));
         generator.addProvider(event.includeClient(), new ModLanguageProvider(packOutput, "en_us"));
 
-        // Server-side data generators
+        
         generator.addProvider(event.includeServer(), new ModRecipeProvider(packOutput));
         generator.addProvider(event.includeServer(), new ModLootTableProvider(packOutput));
 

@@ -25,19 +25,15 @@ public class ModBlockStateProvider extends BlockStateProvider {
     private void generateWoodSet(WoodTypeVariant woodType) {
         String name = woodType.getName();
 
-        // Leaves
         simpleBlockWithItem(ModBlocks.LEAVES.get(woodType).get(), cubeAll(ModBlocks.LEAVES.get(woodType).get()));
 
-        // Logs - proper axis handling
         logBlock(ModBlocks.LOGS.get(woodType).get());
         woodBlock(ModBlocks.WOOD.get(woodType).get());
         logBlock(ModBlocks.STRIPPED_LOGS.get(woodType).get());
         woodBlock(ModBlocks.STRIPPED_WOOD.get(woodType).get());
 
-        // Planks
         simpleBlockWithItem(ModBlocks.PLANKS.get(woodType).get(), cubeAll(ModBlocks.PLANKS.get(woodType).get()));
 
-        // Slabs and Stairs
         slabBlock(ModBlocks.SLABS.get(woodType).get(),
                 modLoc("block/" + name + "_planks"),
                 modLoc("block/" + name + "_planks"));
@@ -45,7 +41,6 @@ public class ModBlockStateProvider extends BlockStateProvider {
         stairsBlock(ModBlocks.STAIRS.get(woodType).get(),
                 modLoc("block/" + name + "_planks"));
 
-        // Doors and Trapdoors
         doorBlockWithRenderType(ModBlocks.DOORS.get(woodType).get(),
                 modLoc("block/" + name + "_door_bottom"),
                 modLoc("block/" + name + "_door_top"), "cutout");
@@ -53,24 +48,21 @@ public class ModBlockStateProvider extends BlockStateProvider {
         trapdoorBlockWithRenderType(ModBlocks.TRAPDOORS.get(woodType).get(),
                 modLoc("block/" + name + "_trapdoor"), true, "cutout");
 
-        // Fences
         fenceBlock(ModBlocks.FENCES.get(woodType).get(),
                 modLoc("block/" + name + "_planks"));
 
         fenceGateBlock(ModBlocks.FENCE_GATES.get(woodType).get(),
                 modLoc("block/" + name + "_planks"));
 
-        // Pressure Plates and Buttons
         pressurePlateBlock(ModBlocks.PRESSURE_PLATES.get(woodType).get(),
                 modLoc("block/" + name + "_planks"));
 
         buttonBlock(ModBlocks.BUTTONS.get(woodType).get(),
                 modLoc("block/" + name + "_planks"));
 
-        // Signs - generate proper models
         generateSignModels(woodType);
 
-        // Hanging Signs - generate proper models  
+  
         generateHangingSignModels(woodType);
     }
 
@@ -83,11 +75,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
         ResourceLocation barkTexture;
         
         if (blockName.startsWith("stripped_")) {
-            // For stripped wood, use the stripped log texture on all sides
             String logName = blockName.replace("_wood", "_log");
             barkTexture = modLoc("block/" + logName);
         } else {
-            // For regular wood, use the regular log texture on all sides
             String logName = blockName.replace("_wood", "_log");
             barkTexture = modLoc("block/" + logName);
         }
@@ -101,29 +91,29 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     private void generateSignModels(WoodTypeVariant woodType) {
         String name = woodType.getName();
-        Block standingSign = ModBlocks.SIGNS.get(woodType).get();
-        Block wallSign = ModBlocks.WALL_SIGNS.get(woodType).get();
-        
-        // Generate sign model with particle texture
-        ModelFile signModel = models().withExistingParent(name + "_sign", "block/oak_sign")
-                .texture("particle", modLoc("block/" + name + "_planks"));
-        
-        // Apply model to both standing and wall signs
-        simpleBlock(standingSign, signModel);
-        simpleBlock(wallSign, signModel);
+        signBlock(ModBlocks.SIGNS.get(woodType).get(), 
+                ModBlocks.WALL_SIGNS.get(woodType).get(),
+                modLoc("block/" + name + "_planks"));
     }
 
     private void generateHangingSignModels(WoodTypeVariant woodType) {
         String name = woodType.getName();
-        Block hangingSign = ModBlocks.HANGING_SIGNS.get(woodType).get();
-        Block wallHangingSign = ModBlocks.WALL_HANGING_SIGNS.get(woodType).get();
-        
-        // Generate hanging sign model with particle texture
-        ModelFile hangingSignModel = models().withExistingParent(name + "_hanging_sign", "block/cherry_hanging_sign")
-                .texture("particle", modLoc("block/stripped_" + name + "_log"));
-        
-        // Apply model to both hanging and wall hanging signs
-        simpleBlock(hangingSign, hangingSignModel);
-        simpleBlock(wallHangingSign, hangingSignModel);
+        hangingSignBlock(ModBlocks.HANGING_SIGNS.get(woodType).get(),
+                ModBlocks.WALL_HANGING_SIGNS.get(woodType).get(),
+                modLoc("block/" + name + "_planks"));
+    }
+    
+    public void hangingSignBlock(Block signBlock, Block wallSignBlock, ResourceLocation texture) {
+        ModelFile sign = models().sign(name(signBlock), texture);
+        hangingSignBlock(signBlock, wallSignBlock, sign);
+    }
+
+    public void hangingSignBlock(Block signBlock, Block wallSignBlock, ModelFile sign) {
+        simpleBlock(signBlock, sign);
+        simpleBlock(wallSignBlock, sign);
+    }
+
+    private String name(Block block) {
+        return block.getDescriptionId().replace("block." + PamTreeWood.MODID + ".", "");
     }
 }

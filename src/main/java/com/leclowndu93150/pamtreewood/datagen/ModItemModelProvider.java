@@ -28,7 +28,6 @@ public class ModItemModelProvider extends ItemModelProvider {
     private void generateWoodItemModels(WoodTypeVariant woodType) {
         String name = woodType.getName();
 
-        // Block items that should use block models
         blockBasedItem(ModBlocks.LEAVES.get(woodType));
         blockBasedItem(ModBlocks.LOGS.get(woodType));
         blockBasedItem(ModBlocks.WOOD.get(woodType));
@@ -39,20 +38,16 @@ public class ModItemModelProvider extends ItemModelProvider {
         blockBasedItem(ModBlocks.STAIRS.get(woodType));
         blockBasedItem(ModBlocks.PRESSURE_PLATES.get(woodType));
 
-        // Special inventory models
         fenceItem(ModBlocks.FENCES.get(woodType), name);
         fenceGateItem(ModBlocks.FENCE_GATES.get(woodType), name);
         buttonItem(ModBlocks.BUTTONS.get(woodType), name);
 
-        // Special items that need custom models
         simpleItem(ModItems.DOOR_ITEMS.get(woodType));
         trapdoorItem(ModBlocks.TRAPDOORS.get(woodType));
 
-        // Signs (use generated item models)
         simpleItem(ModItems.SIGN_ITEMS.get(woodType));
         simpleItem(ModItems.HANGING_SIGN_ITEMS.get(woodType));
 
-        // Boats (use generated item models)
         simpleItem(ModItems.BOAT_ITEMS.get(woodType));
         simpleItem(ModItems.CHEST_BOAT_ITEMS.get(woodType));
     }

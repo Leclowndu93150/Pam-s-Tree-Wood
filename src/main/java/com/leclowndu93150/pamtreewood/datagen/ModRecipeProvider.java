@@ -33,7 +33,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         ItemLike planks = ModItems.getPlankItem(woodType).get();
         String name = woodType.getName();
 
-        // Wood from logs (2x2 logs -> 3 wood)
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, wood, 3)
                 .pattern("##")
                 .pattern("##")
@@ -48,7 +47,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_stripped_" + name + "_log", has(strippedLog))
                 .save(consumer);
 
-        // Planks from logs and wood
         ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, planks, 4)
                 .requires(log)
                 .unlockedBy("has_" + name + "_log", has(log))
@@ -69,14 +67,12 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_stripped_" + name + "_wood", has(strippedWood))
                 .save(consumer, name + "_planks_from_stripped_wood");
 
-        // Slabs
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModItems.SLAB_ITEMS.get(woodType).get(), 6)
                 .pattern("###")
                 .define('#', planks)
                 .unlockedBy("has_" + name + "_planks", has(planks))
                 .save(consumer);
 
-        // Stairs
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModItems.STAIR_ITEMS.get(woodType).get(), 4)
                 .pattern("#  ")
                 .pattern("## ")
@@ -85,7 +81,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_" + name + "_planks", has(planks))
                 .save(consumer);
 
-        // Door
         ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, ModItems.DOOR_ITEMS.get(woodType).get(), 3)
                 .pattern("##")
                 .pattern("##")
@@ -94,7 +89,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_" + name + "_planks", has(planks))
                 .save(consumer);
 
-        // Trapdoor
         ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, ModItems.TRAPDOOR_ITEMS.get(woodType).get(), 2)
                 .pattern("###")
                 .pattern("###")
@@ -102,7 +96,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_" + name + "_planks", has(planks))
                 .save(consumer);
 
-        // Fence
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModItems.FENCE_ITEMS.get(woodType).get(), 3)
                 .pattern("#S#")
                 .pattern("#S#")
@@ -111,7 +104,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_" + name + "_planks", has(planks))
                 .save(consumer);
 
-        // Fence Gate
         ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, ModItems.FENCE_GATE_ITEMS.get(woodType).get())
                 .pattern("S#S")
                 .pattern("S#S")
@@ -120,20 +112,17 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_" + name + "_planks", has(planks))
                 .save(consumer);
 
-        // Pressure Plate
         ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, ModItems.PRESSURE_PLATE_ITEMS.get(woodType).get())
                 .pattern("##")
                 .define('#', planks)
                 .unlockedBy("has_" + name + "_planks", has(planks))
                 .save(consumer);
 
-        // Button
         ShapelessRecipeBuilder.shapeless(RecipeCategory.REDSTONE, ModItems.BUTTON_ITEMS.get(woodType).get())
                 .requires(planks)
                 .unlockedBy("has_" + name + "_planks", has(planks))
                 .save(consumer);
 
-        // Sign
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModItems.SIGN_ITEMS.get(woodType).get(), 3)
                 .pattern("###")
                 .pattern("###")
@@ -143,7 +132,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_" + name + "_planks", has(planks))
                 .save(consumer);
 
-        // Hanging Sign
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModItems.HANGING_SIGN_ITEMS.get(woodType).get(), 6)
                 .pattern("C C")
                 .pattern("###")
@@ -153,7 +141,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_stripped_" + name + "_log", has(strippedLog))
                 .save(consumer);
 
-        // Boat
         ShapedRecipeBuilder.shaped(RecipeCategory.TRANSPORTATION, ModItems.BOAT_ITEMS.get(woodType).get())
                 .pattern("# #")
                 .pattern("###")
@@ -161,14 +148,12 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_" + name + "_planks", has(planks))
                 .save(consumer);
 
-        // Chest Boat
         ShapelessRecipeBuilder.shapeless(RecipeCategory.TRANSPORTATION, ModItems.CHEST_BOAT_ITEMS.get(woodType).get())
                 .requires(ModItems.BOAT_ITEMS.get(woodType).get())
                 .requires(Blocks.CHEST)
                 .unlockedBy("has_" + name + "_boat", has(ModItems.BOAT_ITEMS.get(woodType).get()))
                 .save(consumer);
 
-        // Stonecutting recipes for efficiency
         stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, ModItems.SLAB_ITEMS.get(woodType).get(), planks, 2);
         stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, ModItems.STAIR_ITEMS.get(woodType).get(), planks);
     }

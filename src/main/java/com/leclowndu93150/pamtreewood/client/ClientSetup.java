@@ -19,7 +19,6 @@ public class ClientSetup {
 
     @SubscribeEvent
     public static void onClientSetup(FMLClientSetupEvent event) {
-        // Register our wood types with the Sheets class so sign textures are loaded
         event.enqueueWork(() -> {
             for (WoodTypeVariant woodType : WoodTypeVariant.values()) {
                 Sheets.addWoodType(woodType.getWoodType());
@@ -29,7 +28,6 @@ public class ClientSetup {
 
     @SubscribeEvent
     public static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
-        // Register boat entity renderers
         for (WoodTypeVariant woodType : WoodTypeVariant.values()) {
             event.registerEntityRenderer(ModBoats.getBoatEntity(woodType).get(),
                     context -> new ModBoatRenderer(context, false));
@@ -37,7 +35,6 @@ public class ClientSetup {
                     ModChestBoatRenderer::new);
         }
         
-        // Register block entity renderers
         event.registerBlockEntityRenderer(ModBlockEntities.MOD_SIGN.get(), SignRenderer::new);
         event.registerBlockEntityRenderer(ModBlockEntities.MOD_HANGING_SIGN.get(), HangingSignRenderer::new);
     }

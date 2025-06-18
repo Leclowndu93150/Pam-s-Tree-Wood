@@ -60,7 +60,6 @@ public class PamTreeWood {
         modEventBus.addListener(this::commonSetup);
     }
 
-    //TODO: Neither the signs not the models render (don't fix)
 
 
     @SubscribeEvent

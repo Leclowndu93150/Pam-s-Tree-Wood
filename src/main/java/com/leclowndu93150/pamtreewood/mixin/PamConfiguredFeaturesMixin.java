@@ -26,7 +26,7 @@ public abstract class PamConfiguredFeaturesMixin {
             FoliagePlacer foliagePlacer = originalTreeConfig.foliagePlacer;
             WoodTypeVariant targetWoodType = null;
 
-            // Check foliage placers first
+            
             if (foliagePlacer instanceof AlmondFruitBlockFoliagePlacer) {
                 targetWoodType = WoodTypeVariant.ALMOND;
             } else if (foliagePlacer instanceof ApricotFruitBlockFoliagePlacer) {

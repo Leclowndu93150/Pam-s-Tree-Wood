@@ -32,7 +32,6 @@ public class ModLootTableProvider extends LootTableProvider {
         }
 
         private void generateWoodLootTables(WoodTypeVariant woodType) {
-            // Simple drops (block drops itself)
             dropSelf(ModBlocks.LEAVES.get(woodType).get());
             dropSelf(ModBlocks.LOGS.get(woodType).get());
             dropSelf(ModBlocks.WOOD.get(woodType).get());
@@ -48,11 +47,9 @@ public class ModLootTableProvider extends LootTableProvider {
             dropSelf(ModBlocks.SIGNS.get(woodType).get());
             dropSelf(ModBlocks.HANGING_SIGNS.get(woodType).get());
 
-            // Special drops
             add(ModBlocks.SLABS.get(woodType).get(), createSlabItemTable(ModBlocks.SLABS.get(woodType).get()));
             add(ModBlocks.DOORS.get(woodType).get(), createDoorTable(ModBlocks.DOORS.get(woodType).get()));
 
-            // Wall signs don't drop themselves, they drop the regular sign
             add(ModBlocks.WALL_SIGNS.get(woodType).get(),
                     createSingleItemTable(ModBlocks.SIGNS.get(woodType).get()));
             add(ModBlocks.WALL_HANGING_SIGNS.get(woodType).get(),

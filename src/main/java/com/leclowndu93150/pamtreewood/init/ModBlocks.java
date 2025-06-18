@@ -20,7 +20,6 @@ import java.util.Map;
 public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, PamTreeWood.MODID);
 
-    // Maps to store all wood blocks by type
     public static final Map<WoodTypeVariant, RegistryObject<Block>> LEAVES = new HashMap<>();
     public static final Map<WoodTypeVariant, RegistryObject<RotatedPillarBlock>> LOGS = new HashMap<>();
     public static final Map<WoodTypeVariant, RegistryObject<RotatedPillarBlock>> WOOD = new HashMap<>();
@@ -51,11 +50,9 @@ public class ModBlocks {
         WoodType mcWoodType = woodType.getWoodType();
         BlockSetType blockSetType = mcWoodType.setType();
 
-        // Leaves
         LEAVES.put(woodType, BLOCKS.register(name + "_leaves",
                 () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES))));
 
-        // Logs
         LOGS.put(woodType, BLOCKS.register(name + "_log",
                 () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG))));
 
@@ -68,11 +65,9 @@ public class ModBlocks {
         STRIPPED_WOOD.put(woodType, BLOCKS.register("stripped_" + name + "_wood",
                 () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_WOOD))));
 
-        // Planks
         PLANKS.put(woodType, BLOCKS.register(name + "_planks",
                 () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS))));
 
-        // Slabs and Stairs
         SLABS.put(woodType, BLOCKS.register(name + "_slab",
                 () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SLAB))));
 
@@ -80,21 +75,18 @@ public class ModBlocks {
                 () -> new StairBlock(() -> PLANKS.get(woodType).get().defaultBlockState(),
                         BlockBehaviour.Properties.copy(Blocks.OAK_STAIRS))));
 
-        // Doors and Trapdoors
         DOORS.put(woodType, BLOCKS.register(name + "_door",
                 () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_DOOR), blockSetType)));
 
         TRAPDOORS.put(woodType, BLOCKS.register(name + "_trapdoor",
                 () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_TRAPDOOR), blockSetType)));
 
-        // Fences
         FENCES.put(woodType, BLOCKS.register(name + "_fence",
                 () -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE))));
 
         FENCE_GATES.put(woodType, BLOCKS.register(name + "_fence_gate",
                 () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE_GATE), mcWoodType)));
 
-        // Pressure Plates and Buttons
         PRESSURE_PLATES.put(woodType, BLOCKS.register(name + "_pressure_plate",
                 () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING,
                         BlockBehaviour.Properties.copy(Blocks.OAK_PRESSURE_PLATE), blockSetType)));
@@ -102,14 +94,12 @@ public class ModBlocks {
         BUTTONS.put(woodType, BLOCKS.register(name + "_button",
                 () -> new ButtonBlock(BlockBehaviour.Properties.copy(Blocks.OAK_BUTTON), blockSetType, 30, true)));
 
-        // Custom Signs
         SIGNS.put(woodType, BLOCKS.register(name + "_sign",
                 () -> new ModStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), mcWoodType)));
 
         WALL_SIGNS.put(woodType, BLOCKS.register(name + "_wall_sign",
                 () -> new ModWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), mcWoodType)));
 
-        // Custom Hanging Signs
         HANGING_SIGNS.put(woodType, BLOCKS.register(name + "_hanging_sign",
                 () -> new ModCeilingHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_HANGING_SIGN), mcWoodType)));
 

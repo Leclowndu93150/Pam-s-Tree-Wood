@@ -15,7 +15,6 @@ public class ModLanguageProvider extends LanguageProvider {
 
     @Override
     protected void addTranslations() {
-        // Creative tab
         add("itemGroup.pamtreewood.pam_tree_wood", "Pam's Tree Wood");
 
         for (WoodTypeVariant woodType : WoodTypeVariant.values()) {
@@ -27,7 +26,6 @@ public class ModLanguageProvider extends LanguageProvider {
         String name = woodType.getName();
         String displayName = formatDisplayName(name);
 
-        // Blocks
         add(ModBlocks.LEAVES.get(woodType).get(), displayName + " Leaves");
         add(ModBlocks.LOGS.get(woodType).get(), displayName + " Log");
         add(ModBlocks.WOOD.get(woodType).get(), displayName + " Wood");
@@ -45,17 +43,14 @@ public class ModLanguageProvider extends LanguageProvider {
         add(ModBlocks.SIGNS.get(woodType).get(), displayName + " Sign");
         add(ModBlocks.HANGING_SIGNS.get(woodType).get(), displayName + " Hanging Sign");
 
-        // Items (boats and special items)
         add(ModItems.BOAT_ITEMS.get(woodType).get(), displayName + " Boat");
         add(ModItems.CHEST_BOAT_ITEMS.get(woodType).get(), displayName + " Boat with Chest");
         
-        // Entities
         add(ModBoats.BOAT_ENTITIES.get(woodType).get(), displayName + " Boat");
         add(ModBoats.CHEST_BOAT_ENTITIES.get(woodType).get(), displayName + " Boat with Chest");
     }
 
     private String formatDisplayName(String name) {
-        // Convert snake_case to Title Case
         String[] words = name.split("_");
         StringBuilder result = new StringBuilder();
 

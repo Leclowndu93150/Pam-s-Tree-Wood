@@ -14,7 +14,6 @@ import java.util.Map;
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, PamTreeWood.MODID);
 
-    // Maps to store all wood items by type
     public static final Map<WoodTypeVariant, RegistryObject<BlockItem>> LEAVES_ITEMS = new HashMap<>();
     public static final Map<WoodTypeVariant, RegistryObject<BlockItem>> LOG_ITEMS = new HashMap<>();
     public static final Map<WoodTypeVariant, RegistryObject<BlockItem>> WOOD_ITEMS = new HashMap<>();
@@ -43,7 +42,6 @@ public class ModItems {
     private static void registerWoodItemSet(WoodTypeVariant woodType) {
         String name = woodType.getName();
 
-        // Block items
         LEAVES_ITEMS.put(woodType, ITEMS.register(name + "_leaves",
                 () -> new BlockItem(ModBlocks.LEAVES.get(woodType).get(), new Item.Properties())));
 
@@ -86,7 +84,6 @@ public class ModItems {
         BUTTON_ITEMS.put(woodType, ITEMS.register(name + "_button",
                 () -> new BlockItem(ModBlocks.BUTTONS.get(woodType).get(), new Item.Properties())));
 
-        // Signs
         SIGN_ITEMS.put(woodType, ITEMS.register(name + "_sign",
                 () -> new SignItem(new Item.Properties().stacksTo(16),
                         ModBlocks.SIGNS.get(woodType).get(), ModBlocks.WALL_SIGNS.get(woodType).get())));
@@ -95,7 +92,6 @@ public class ModItems {
                 () -> new HangingSignItem(ModBlocks.HANGING_SIGNS.get(woodType).get(),
                         ModBlocks.WALL_HANGING_SIGNS.get(woodType).get(), new Item.Properties().stacksTo(16))));
 
-        // Boats
         BOAT_ITEMS.put(woodType, ITEMS.register(name + "_boat",
                 () -> new ModBoatItem(false, woodType, new Item.Properties().stacksTo(1))));
 
